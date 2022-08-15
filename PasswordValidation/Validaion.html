@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Design by foolishdeveloper.com -->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm Password Javascript</title>
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!--Stylesheet-->
+    <style media="screen">
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        height: 100vh;
+        background: linear-gradient(45deg, #51c8ff, #137bca);
+      }
+
+      form {
+        background-color: #ffffff;
+        width: 400px;
+        padding: 20px 40px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 5px;
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.15);
+      }
+      label {
+        font-weight: 500;
+        color: #101030;
+      }
+      input {
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+        padding: 12px;
+        border-radius: 5px;
+        outline: none;
+        color: #101010;
+      }
+      #password {
+        margin-bottom: 30px;
+      }
+      input[type="password"] {
+        border: 2px solid #c2c2c2;
+      }
+      input[type="button"] {
+        background-color: #208be3;
+        border: none;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        margin-bottom: 30px;
+        margin-top: 20px;
+      }
+      p {
+        font-size: 14px;
+        margin: 15px 0;
+        display: inline-block;
+        color: #ffffff;
+        padding: 4px;
+        text-align: center;
+      }
+      h1 {
+        font-size: 27px;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>Password Validation</h1>
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Your Password" />
+
+      <label for="cnfrm-password">Confirm Password</label>
+      <input
+        type="password"
+        id="cnfrm-password"
+        placeholder="Confirm password"
+      />
+      <p id="message"></p>
+      <input type="button" onclick="checkPassword()" value="SUBMIT" />
+    </form>
+    <!--Script-->
+    <script>
+      function checkPassword() {
+        let password = document.getElementById("password").value;
+        let cnfrmPassword = document.getElementById("cnfrm-password").value;
+        let message = document.getElementById("message");
+        console.log(
+          " Password:",
+          password,
+          "\n",
+          "Confirm Password:",
+          cnfrmPassword
+        );
+
+        if (password.length != 0) {
+          if (password == cnfrmPassword) {
+            message.textContent = "Wow, Passwords match";
+            message.style.backgroundColor = "#1dcd59";
+          } else {
+            message.textContent = "Sorry, Password don't match";
+            message.style.backgroundColor = "#ff4d4d";
+          }
+        } else {
+          alert("Password can't be empty!");
+          message.textContent = "";
+        }
+      }
+    </script>
+  </body>
+</html>
