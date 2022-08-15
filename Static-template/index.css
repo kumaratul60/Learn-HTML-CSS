@@ -1,0 +1,99 @@
+body {
+  background: #f6f9fc;
+}
+h1 {
+  text-align: center;
+  margin: 0;
+}
+.waving {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.waving h3 {
+  color: aqua;
+}
+.waving:before {
+  content: attr(data-hover);
+}
+
+.waving:hover {
+  animation-name: wave-animation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-origin: 60% 60%;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+.question {
+  display: flex;
+  align-items: center;
+  color: #11967e;
+  transition: color 0.5s;
+  cursor: pointer;
+  border-right: 25px solid#11967e;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 20%) 01px 2px;
+  border-radius: 10px;
+}
+.question:hover {
+  color: black;
+}
+.status {
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.correct {
+  background: linear-gradient(#04ff00, #369536);
+}
+.partially-correct {
+  background: Linear-gradient(#fbf82b, #ffc63b);
+}
+.incorrect {
+  background: linear-gradient(#ff0000, #760000);
+}
+.unattempted {
+  border: 1px solid #6772e54d;
+}
