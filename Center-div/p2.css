@@ -1,0 +1,12 @@
+#parent {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(172, 124, 220);
+  display: grid;
+}
+.child {
+  width: 50px;
+  height: 50px;
+  background: rgb(63, 205, 50);
+  margin: auto; /*horizontal*/
+}

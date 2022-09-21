@@ -1,0 +1,16 @@
+#parent {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(68, 153, 51);
+  position: relative;
+}
+.child {
+  width: 50px;
+  height: 50px;
+  background: rgb(133, 199, 230);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  translate: -50% -50%;
+}
