@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* position: relative; */
+}
+
+.nav_container {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 10vh;
+  background-color: indigo;
+}
+
+.main {
+  position: absolute;
+  top: 10%;
+  margin-bottom: 20%;
+  right: 35%;
+  width: 50vh;
+  border: 2px solid #7777;
+  z-index: 2;
+}
+.right_container {
+  position: sticky;
+  top: 0;
+  left: 100%;
+  width: 15vw;
+  height: 70vh;
+  background-color: palevioletred;
+}
+
+.footer_container {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 70px;
+  background-color: purple;
+}

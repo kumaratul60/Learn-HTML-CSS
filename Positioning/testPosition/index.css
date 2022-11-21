@@ -1,0 +1,74 @@
+/* relative of relative is parent,
+    relative of absolute  is HTML
+
+   => The parent of "absolute element" is not always the Root element. 
+    */
+
+/* Z-index : children are came on parent, it define the order of displaying element, 
+
+or: It decides which element will show on top of the other. The first to show, is the one with the greatest index 
+                  
+higher z-index: higher towards to user , opposite is also true
+
+*/
+
+body {
+  color: #ffff;
+}
+
+.container {
+  width: 300px;
+  height: 600px;
+  background-color: gainsboro;
+  margin: 100px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.red {
+  /* relative -> relative to its parent where parent is container */
+  position: relative;
+  background-color: red;
+  /* can define top,left,right,bottom */
+  top: 100px;
+  right: 100px;
+  left: 100px;
+}
+
+.blue {
+  position: fixed;
+  background-color: blue;
+  /* left: 0;
+  top: 0; */
+  bottom: 50px;
+  right: 50px;
+  z-index: 2;
+}
+
+.green {
+  /* position absolute work based on html flow  */
+  /* relative of relative is parent,
+    relative of absolute  is HTML/Root
+
+    */
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  bottom: 0;
+  right: 0;
+  background-color: green;
+  z-index: 1;
+}
+
+.purple {
+  position: sticky;
+  background-color: palevioletred;
+  top: 50px;
+}
+
+.spacer {
+  height: 300vh;
+}

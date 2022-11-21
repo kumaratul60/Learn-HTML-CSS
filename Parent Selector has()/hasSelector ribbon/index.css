@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.card {
+  position: relative;
+  background: white;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+  max-width: 500px;
+  overflow: hidden;
+}
+.card-body {
+  padding: 1rem;
+  background: hsl(0, 0%, 100%, 0.5);
+}
+/* .card-img {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  object-fit: cover;
+} */
+
+.special-ribbon {
+  position: absolute;
+  top: 5px;
+  right: -2.25rem;
+  rotate: 30deg;
+  background: purple;
+  border: 1px solid white;
+  color: white;
+  padding: 0.25rem 3rem;
+}
+
+/* .card.special {
+  border-color: purple;
+  box-shadow: 0 2px 10px 2px purple;
+  color: purple;
+} */
+
+.card:has(.special-ribbon) {
+  border-color: purple;
+  box-shadow: 0 2px 10px 2px purple;
+  color: purple;
+}
+
+/* Adding dark mode without js */
+body:has(.dark-mode-toggle:checked) {
+  background: #333;
+}
+body:has(.dark-mode-toggle:checked) .card {
+  background: coral;
+}

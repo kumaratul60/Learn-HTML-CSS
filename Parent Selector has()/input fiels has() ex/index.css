@@ -1,0 +1,18 @@
+/* + -> it select to very next sibling
+where ~ -> it select to any sibling which comes after the current element
+*/
+
+label:has(+ input:valid) {
+  color: green;
+}
+label:has(+ input:valid)::before {
+  content: "✓";
+  margin-right: 0.25em;
+}
+label:has(+ input:invalid) {
+  color: red;
+}
+label:has(+ input:invalid)::before {
+  content: "❌";
+  margin-right: 0.25em;
+}

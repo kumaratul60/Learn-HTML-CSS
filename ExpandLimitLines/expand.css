@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f3f3f3;
+  overflow: hidden;
+}
+
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.card {
+  background: white;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.25em;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.cutoff-text {
+  /*
+  --max-lines: 4;
+
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-lines); */
+
+  /*another way to do line clamp  */
+
+  --max-lines: 4;
+  --line-height: 1.4;
+
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+
+  overflow: hidden;
+
+  /* adding fade effect */
+  position: relative;
+}
+
+/* .cutoff-text::before { */
+/* on click expand remove fade effect  */
+.cutoff-text:has(+ .expand-btn:not(:checked))::before {
+  content: "";
+  position: absolute;
+  height: calc(1rem * var(--line-height)); /* height of fade effect */
+  width: 100%;
+  bottom: 0;
+  pointer-events: none; /* it means not selectable*/
+  background: linear-gradient(to bottom, transparent, white);
+}
+
+.expand-btn {
+  appearance: none; /* it removes the checked state*/
+  border: 1px solid black;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.expand-btn:hover {
+  background: #ccc;
+}
+
+.expand-btn::before {
+  content: "Expand";
+}
+
+.expand-btn:checked::before {
+  content: "Collapse";
+}
+
+/*:has(+ .className) -> div has direct child element selecting*/
+.cutoff-text:has(+ .expand-btn:checked) {
+  max-height: none;
+}

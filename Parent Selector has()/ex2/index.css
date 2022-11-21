@@ -1,0 +1,30 @@
+.box {
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+/* .box:has(.p1){
+    background:coral
+} */
+
+/* all p tag under box class */
+/* .box:has(p) {
+  background: yellowgreen;
+} */
+
+/* direct child */
+.box:has(> p) {
+  background: yellowgreen;
+}
+
+/* all div */
+.box:has(div) {
+  background: green;
+}
+
+/* select p tag inside div of box element*/
+.box:has(div) p {
+  color: yellow;
+}
