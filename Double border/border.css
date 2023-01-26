@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
+  padding: 15px;
+}
+div {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-1 {
+  background-color: green;
+  border-width: 15px;
+  border-color: red;
+  border-style: double;
+}
+
+.box-2 {
+  background-color: brown;
+  border: 5px solid yellow;
+  outline: 5px solid blue;
+  outline-offset: -20px;
+}
+
+.box-3 {
+  background-color: rebeccapurple;
+  position: relative;
+  border: 8px solid red;
+}
+
+.box-3::before {
+  content: " ";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 8px solid green;
+}
+
+.box-4 {
+  background-color: yellow;
+  box-shadow: 0 0 0 5px red, 0 0 0 10px green;
+}
+
+.box-5 {
+  border: 7px solid rgb(36, 85, 7);
+  padding: 5px;
+  background-clip: content-box;
+  background-color: violet;
+}
+.box-6 {
+  border: 7px solid rgb(36, 85, 7);
+  background: linear-gradient(to top, #8f0404 7px, transparent 1px),
+    /* bottom border */ linear-gradient(to bottom, #8f0404 7px, transparent 1px),
+    /* top border */ linear-gradient(to left, #8f0404 7px, transparent 1px),
+    /* right border */ linear-gradient(to right, #8f0404 7px, transparent 1px); /* left border */
+  background-color: aqua;
+}
